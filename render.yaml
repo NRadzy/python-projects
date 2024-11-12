@@ -1,0 +1,16 @@
+# Exported from Render on 2024-11-12T21:00:22Z
+services:
+- type: web
+  name: python-projects
+  runtime: python
+  repo: https://github.com/NRadzy/python-projects
+  plan: free
+  envVars:
+  - key: DB_URI
+    sync: false
+  - key: FLASK_KEY
+    sync: false
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn main:app
+version: "1"
